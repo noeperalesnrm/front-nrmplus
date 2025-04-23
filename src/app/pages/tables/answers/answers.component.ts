@@ -280,7 +280,7 @@ export class AnswersComponent implements OnInit {
 
   constructor(private api: ApiService, private http: HttpClient, private toastr: NbToastrService) {
     this.source = new ServerDataSource(http, { 
-      endPoint: 'http://34.58.102.219:8080/api/useranswers/pag', 
+      endPoint: 'https://34.58.102.219/api/useranswers/pag', 
       dataKey: 'data.rows', 
       pagerPageKey: 'offset', 
       pagerLimitKey: 'limit', 
@@ -319,7 +319,7 @@ export class AnswersComponent implements OnInit {
       { field: 'question_id', search: questionId },
     ]);*/
     this.source = new ServerDataSource(this.http, { 
-      endPoint: 'http://34.58.102.219:8080/api/useranswers/pag?form_id='+this.selectedForm+'&question_id='+questionId, 
+      endPoint: 'https://34.58.102.219/api/useranswers/pag?form_id='+this.selectedForm+'&question_id='+questionId, 
       dataKey: 'data.rows', 
       pagerPageKey: 'offset', 
       pagerLimitKey: 'limit', 

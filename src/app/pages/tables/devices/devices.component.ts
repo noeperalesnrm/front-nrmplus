@@ -54,7 +54,7 @@ export class DevicesComponent {
 
   constructor(http: HttpClient) {
     this.source = new ServerDataSource(http, { 
-      endPoint: 'http://34.58.102.219:8080/api/devices/pag', 
+      endPoint: 'https://34.58.102.219/api/devices/pag', 
       dataKey: 'data.rows', 
       pagerPageKey: 'offset', 
       pagerLimitKey: 'limit', 

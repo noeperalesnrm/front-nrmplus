@@ -320,7 +320,7 @@ class AnswersComponent {
       }
     };
     this.source = new ng2_smart_table__WEBPACK_IMPORTED_MODULE_3__.ServerDataSource(http, {
-      endPoint: 'http://34.58.102.219:8080/api/useranswers/pag',
+      endPoint: 'https://34.58.102.219/api/useranswers/pag',
       dataKey: 'data.rows',
       pagerPageKey: 'offset',
       pagerLimitKey: 'limit',
@@ -356,7 +356,7 @@ class AnswersComponent {
       { field: 'question_id', search: questionId },
     ]);*/
     this.source = new ng2_smart_table__WEBPACK_IMPORTED_MODULE_3__.ServerDataSource(this.http, {
-      endPoint: 'http://34.58.102.219:8080/api/useranswers/pag?form_id=' + this.selectedForm + '&question_id=' + questionId,
+      endPoint: 'https://34.58.102.219/api/useranswers/pag?form_id=' + this.selectedForm + '&question_id=' + questionId,
       dataKey: 'data.rows',
       pagerPageKey: 'offset',
       pagerLimitKey: 'limit',
@@ -456,7 +456,7 @@ class ApiService {
   constructor(http, toastr) {
     this.http = http;
     this.toastr = toastr;
-    this.baseUrl = 'http://34.58.102.219:8080/api'; // Ajusta tu URL base
+    this.baseUrl = 'https://34.58.102.219/api'; // Ajusta tu URL base
   }
   // Headers comunes (incluye autenticación si existe)
   getHeaders() {
@@ -583,7 +583,7 @@ class DevicesComponent {
       }
     };
     this.source = new ng2_smart_table__WEBPACK_IMPORTED_MODULE_0__.ServerDataSource(http, {
-      endPoint: 'http://34.58.102.219:8080/api/devices/pag',
+      endPoint: 'https://34.58.102.219/api/devices/pag',
       dataKey: 'data.rows',
       pagerPageKey: 'offset',
       pagerLimitKey: 'limit',
@@ -657,7 +657,7 @@ class ApiService {
   constructor(http, toastr) {
     this.http = http;
     this.toastr = toastr;
-    this.baseUrl = 'http://34.58.102.219:8080/api'; // Ajusta tu URL base
+    this.baseUrl = 'https://34.58.102.219/api'; // Ajusta tu URL base
   }
   // Headers comunes (incluye autenticación si existe)
   getHeaders() {
@@ -1212,7 +1212,7 @@ class SmartTableComponent {
       }
     };
     this.source = new ng2_smart_table__WEBPACK_IMPORTED_MODULE_0__.ServerDataSource(http, {
-      endPoint: 'http://34.58.102.219:8080/api/devices/pag',
+      endPoint: 'https://34.58.102.219/api/devices/pag',
       dataKey: 'data.rows',
       pagerPageKey: 'offset',
       pagerLimitKey: 'limit',
@@ -1839,7 +1839,7 @@ class UsersComponent {
       }
     };
     this.source = new ng2_smart_table__WEBPACK_IMPORTED_MODULE_1__.ServerDataSource(http, {
-      endPoint: 'http://34.58.102.219:8080/api/users/pag',
+      endPoint: 'https://34.58.102.219/api/users/pag',
       dataKey: 'data.rows',
       pagerPageKey: 'offset',
       pagerLimitKey: 'limit',
