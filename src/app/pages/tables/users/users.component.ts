@@ -111,7 +111,7 @@ export class UsersComponent {
 
   constructor(http: HttpClient) {
     this.source = new ServerDataSource(http, { 
-      endPoint: 'https://34.58.102.219/api/users/pag', 
+      endPoint: 'https://api.nrm.com.mx/api/users/pag', 
       dataKey: 'data.rows', 
       pagerPageKey: 'offset', 
       pagerLimitKey: 'limit', 

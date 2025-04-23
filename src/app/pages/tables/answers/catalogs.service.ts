@@ -8,7 +8,7 @@ import { catchError, tap } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class ApiService {
-  private baseUrl = 'https://34.58.102.219/api'; // Ajusta tu URL base
+  private baseUrl = 'https://api.nrm.com.mx/api'; // Ajusta tu URL base
   //private authTokenKey = 'auth_token'; // Key para el token en localStorage
 
   constructor(

@@ -66,7 +66,7 @@ export class SmartTableComponent {
 
   constructor(http: HttpClient) {
     this.source = new ServerDataSource(http, { 
-      endPoint: 'https://34.58.102.219/api/devices/pag', 
+      endPoint: 'https://api.nrm.com.mx/api/devices/pag', 
       dataKey: 'data.rows', 
       pagerPageKey: 'offset', 
       pagerLimitKey: 'limit', 
