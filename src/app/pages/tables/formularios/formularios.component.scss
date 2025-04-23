@@ -1,0 +1,103 @@
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  /* Estilos generales del card */
+  nb-card {
+    max-width: 900px;
+    margin: 2rem auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    nb-card-header {
+      background-color: #f7f9fc;
+      border-bottom: 1px solid #edf1f7;
+      padding: 1.25rem 1.5rem;
+
+      h4 {
+        margin: 0;
+        color: #2a3541;
+        font-weight: 600;
+      }
+    }
+
+    nb-card-body {
+      padding: 1.5rem;
+    }
+  }
+
+  /* Grupos de formulario */
+  .form-group {
+    margin-bottom: 2rem;
+
+    .label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #4a5568;
+      font-weight: 500;
+      font-size: 0.875rem;
+
+      &::after {
+        content: ' *';
+        color: #e53e3e;
+      }
+    }
+
+    .error-message {
+      display: block;
+      margin-top: 0.25rem;
+      color: #e53e3e;
+      font-size: 0.75rem;
+    }
+
+    .hint {
+      display: block;
+      margin-top: 0.25rem;
+      color: #718096;
+      font-size: 0.75rem;
+    }
+  }
+
+  /* Preview de imagen */
+  .image-preview {
+    margin-top: 1rem;
+    img {
+      max-width: 150px;
+      max-height: 150px;
+      border-radius: 4px;
+      border: 1px solid #e2e8f0;
+    }
+  }
+
+  /* Sección de preguntas */
+  .questions-section {
+    margin-top: 2rem;
+    h5 {
+      margin-bottom: 0.5rem;
+      color: #4a5568;
+      font-weight: 500;
+    }
+  }
+
+  /* Botones de acción */
+  .actions {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  /* Personalización de la tabla */
+  ::ng-deep ng2-smart-table {
+    th {
+      background-color: #f7fafc !important;
+      font-weight: 600 !important;
+    }
+
+    .ng2-smart-actions {
+      width: 80px !important;
+    }
+
+    .invalid {
+      border-color: #e53e3e !important;
+    }
+  }
+}

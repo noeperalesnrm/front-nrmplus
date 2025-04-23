@@ -1,16 +1,21 @@
 import { Component } from '@angular/core';
-import { LocalDataSource } from 'ng2-smart-table';
+import { LocalDataSource, ServerDataSource } from 'ng2-smart-table';
 
 import { SmartTableData } from '../../../@core/data/smart-table';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'ngx-smart-table',
+  /*template: `
+    <ng2-smart-table [settings]="settings" [source]="source"></ng2-smart-table>
+  `,*/
   templateUrl: './smart-table.component.html',
   styleUrls: ['./smart-table.component.scss'],
 })
 export class SmartTableComponent {
 
   settings = {
+    actions: false,
     add: {
       addButtonContent: '<i class="nb-plus"></i>',
       createButtonContent: '<i class="nb-checkmark"></i>',
@@ -28,36 +33,45 @@ export class SmartTableComponent {
     columns: {
       id: {
         title: 'ID',
-        type: 'number',
-      },
-      firstName: {
-        title: 'First Name',
-        type: 'string',
-      },
-      lastName: {
-        title: 'Last Name',
-        type: 'string',
-      },
-      username: {
-        title: 'Username',
         type: 'string',
       },
       email: {
         title: 'E-mail',
         type: 'string',
       },
-      age: {
-        title: 'Age',
-        type: 'number',
+      ip: {
+        title: 'IP',
+        type: 'string',
+      },
+      isp: {
+        title: 'ISP',
+        type: 'string',
+      },
+      country: {
+        title: 'País',
+        type: 'string',
       },
     },
   };
 
+  /*
   source: LocalDataSource = new LocalDataSource();
 
   constructor(private service: SmartTableData) {
-    const data = this.service.getData();
+    const data = this.service.getDatosExternos();
     this.source.load(data);
+  }
+  */
+  source: ServerDataSource;
+
+  constructor(http: HttpClient) {
+    this.source = new ServerDataSource(http, { 
+      endPoint: 'http://34.58.102.219:8080/api/devices/pag', 
+      dataKey: 'data.rows', 
+      pagerPageKey: 'offset', 
+      pagerLimitKey: 'limit', 
+      totalKey: 'data.count'
+    });
   }
 
   onDeleteConfirm(event): void {

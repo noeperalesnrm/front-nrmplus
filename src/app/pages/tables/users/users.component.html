@@ -1,0 +1,12 @@
+<nb-card>
+  <nb-card-header>
+    <h5>Análisis de Usuarios Registrados</h5>
+  </nb-card-header>
+
+  <nb-card-body>
+    <div class="table-container">
+      <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)">
+      </ng2-smart-table>
+    </div>
+  </nb-card-body>
+</nb-card>

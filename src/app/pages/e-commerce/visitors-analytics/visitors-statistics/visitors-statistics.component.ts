@@ -47,11 +47,11 @@ export class ECommerceVisitorsStatisticsComponent implements AfterViewInit, OnDe
     this.chartLegend = [
       {
         iconColor: visitorsPieLegend.firstSection,
-        title: 'New Visitors',
+        title: 'Recurrentes',
       },
       {
         iconColor: visitorsPieLegend.secondSection,
-        title: 'Return Visitors',
+        title: 'Nuevos',
       },
     ];
   }

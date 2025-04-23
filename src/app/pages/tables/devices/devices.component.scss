@@ -1,0 +1,87 @@
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  nb-card {
+    nb-card {
+      //transform: translate3d(0, 0, 0);
+      /* Estilos para el Card */
+      nb-card {
+        margin: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  
+        nb-card-header {
+          background-color: #f7f9fc;
+          border-bottom: 1px solid #edf1f7;
+          padding: 1.25rem 1.5rem;
+  
+          h5 {
+            margin: 0;
+            color: #2a3541;
+            font-weight: 600;
+          }
+        }
+  
+        nb-card-body {
+          padding: 1.5rem;
+        }
+      }
+  
+      /* Contenedor de Filtros */
+      .filters-container {
+        display: flex;
+        gap: 1.5rem; /* Espacio entre selects */
+        margin-bottom: 2rem; /* Espacio antes de la tabla */
+        align-items: flex-end;
+  
+        .filter-item {
+          flex: 1;
+          max-width: 300px;
+  
+          .filter-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #4a5568;
+            font-weight: 500;
+            font-size: 0.875rem;
+          }
+        }
+      }
+  
+      /* Tabla */
+      .table-container {
+        margin-top: 1.5rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 6px;
+        //overflow: hidden;
+  
+        ::ng-deep ng2-smart-table {
+          font-size: 0.875rem;
+  
+          table {
+            margin-bottom: 0;
+          }
+  
+          th, td {
+            border-color: #e2e8f0 !important;
+          }
+  
+          th {
+            background-color: #f7f9fc;
+            color: #2d3748;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .filters-container {
+      flex-direction: column;
+      .filter-item {
+        max-width: 100%;
+      }
+    }
+  }
+}

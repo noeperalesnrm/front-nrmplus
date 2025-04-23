@@ -1,6 +1,45 @@
 import { NbMenuItem } from '@nebular/theme';
 
 export const MENU_ITEMS: NbMenuItem[] = [
+  /*
+  {
+    title: 'DATA',
+    group: true,
+  },
+  */
+  {
+    title: 'Dashboard',
+    icon: 'home-outline',
+    link: '/pages/dashboard',
+    home: true,
+  },
+  {
+    title: 'Registros',
+    icon: 'grid-outline',
+    children: [
+      {
+        title: 'Respuestas',
+        link: '/pages/tables/answers',
+      },
+      {
+        title: 'Usuarios',
+        link: '/pages/tables/users',
+      },
+      {
+        title: 'Dispositivos',
+        link: '/pages/tables/devices',
+      },
+      /*{
+        title: 'Smart Table',
+        link: '/pages/tables/smart-table',
+      },
+      {
+        title: 'Tree Grid',
+        link: '/pages/tables/tree-grid',
+      },*/
+    ],
+  },
+  /*
   {
     title: 'E-commerce',
     icon: 'shopping-cart-outline',
@@ -16,10 +55,15 @@ export const MENU_ITEMS: NbMenuItem[] = [
     title: 'FEATURES',
     group: true,
   },
+  */
   {
-    title: 'Layout',
+    title: 'Operaciones',
     icon: 'layout-outline',
     children: [
+      {
+        title: 'Crear Formulario',
+        link: '/pages/tables/forms',
+      },/*
       {
         title: 'Stepper',
         link: '/pages/layout/stepper',
@@ -40,9 +84,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: 'Tabs',
         pathMatch: 'prefix',
         link: '/pages/layout/tabs',
-      },
+      },*/
     ],
   },
+  /*
   {
     title: 'Forms',
     icon: 'edit-2-outline',
@@ -199,20 +244,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ],
   },
   {
-    title: 'Tables & Data',
-    icon: 'grid-outline',
-    children: [
-      {
-        title: 'Smart Table',
-        link: '/pages/tables/smart-table',
-      },
-      {
-        title: 'Tree Grid',
-        link: '/pages/tables/tree-grid',
-      },
-    ],
-  },
-  {
     title: 'Miscellaneous',
     icon: 'shuffle-2-outline',
     children: [
@@ -244,4 +275,5 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
     ],
   },
+  */
 ];

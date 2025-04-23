@@ -6,11 +6,11 @@ import { CountryOrderData } from '../data/country-order';
 export class CountryOrderService extends CountryOrderData {
 
   private countriesCategories = [
-    'Sofas',
-    'Furniture',
-    'Lighting',
-    'Tables',
-    'Textiles',
+    'Takis Fuego',
+    'Takis Blue Heat',
+    'Takis Huakamoles',
+    'Takis Volcano',
+    'Takis Original',
   ];
   private countriesCategoriesLength = this.countriesCategories.length;
   private generateRandomData(nPoints: number): number[] {

@@ -1,0 +1,108 @@
+<nb-card>
+  <nb-card-header>
+    <h5>Análisis de Respuestas Obtenidas</h5>
+  </nb-card-header>
+  <nb-card-body>
+    <!-- Contenedor de Filtros (Selects) -->
+    <div class="filters-container">
+      <!-- Select de Formulario -->
+      <div class="filter-item">
+        <label class="filter-label">Formulario</label>
+        <nb-select
+          fullWidth
+          placeholder="Seleccione un formulario"
+          (selectedChange)="onFormSelect($event)"
+          [disabled]="!forms.length"
+        >
+          <nb-option *ngFor="let form of forms" [value]="form.id">
+            {{ form.name }}
+          </nb-option>
+        </nb-select>
+      </div>
+
+      <!-- Select de Pregunta -->
+      <div class="filter-item">
+        <label class="filter-label">Pregunta</label>
+        <nb-select
+          fullWidth
+          placeholder="Seleccione una pregunta"
+          (selectedChange)="onQuestionSelect($event)"
+          [disabled]="!selectedForm || !questions.length"
+        >
+          <nb-option *ngFor="let question of questions" [value]="question.id">
+            {{ question.text }}
+          </nb-option>
+        </nb-select>
+      </div>
+    </div>
+
+    <!-- Tabla de Resultados -->
+    <div class="table-container">
+      <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)" style="margin-top: 20px;">
+      </ng2-smart-table>
+    </div>
+  </nb-card-body>
+</nb-card>
+
+
+<!--nb-card>
+  <nb-card-header>Analizar Respuestas Obtenidas</nb-card-header>
+  <nb-card-body>
+    <nb-select
+      placeholder="Seleccionar formulario"
+      (selectedChange)="onFormSelect($event)"
+      [disabled]="!forms.length"
+    >
+      <nb-option *ngFor="let form of forms" [value]="form.id">
+        {{ form.name }}
+      </nb-option>
+    </nb-select>
+
+    <nb-select
+      placeholder="Seleccionar pregunta"
+      (selectedChange)="onQuestionSelect($event)"
+      [disabled]="!selectedForm || !questions.length"
+    >
+      <nb-option *ngFor="let question of questions" [value]="question.id">
+        {{ question.text }}
+      </nb-option>
+    </nb-select>
+
+    <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)" style="margin-top: 20px;">
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card-->
+
+
+
+<!--nb-card>
+  <nb-card-header>Seleccione el formulario a consultar</nb-card-header>
+  <nb-card-body>
+    <div class="demo-items">
+      <nb-select placeholder="Seleccione el formulario..." selected="">
+        <nb-option value="1">Option 1</nb-option>
+        <nb-option value="2">Option 2</nb-option>
+      </nb-select>
+    </div>
+  </nb-card-body>
+</nb-card>
+<nb-card>
+  <nb-card-header>Seleccione la pregunta que quiere analizar</nb-card-header>
+  <nb-card-body>
+    <div class="demo-items">
+      <nb-select placeholder="Seleccione el formulario..." selected="">
+        <nb-option value="1">Option 1</nb-option>
+        <nb-option value="2">Option 2</nb-option>
+      </nb-select>
+    </div>
+  </nb-card-body>
+</nb-card>
+<nb-card>
+  <nb-card-header>
+    Respuestas Almacenadas
+  </nb-card-header>
+  <nb-card-body>
+    <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)">
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card-->

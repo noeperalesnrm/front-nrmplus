@@ -12,22 +12,22 @@ export class PeriodsService {
 
   getMonths() {
     return [
-      'Jan', 'Feb', 'Mar',
-      'Apr', 'May', 'Jun',
-      'Jul', 'Aug', 'Sep',
-      'Oct', 'Nov', 'Dec',
+      'Ene', 'Feb', 'Mar',
+      'Abr', 'May', 'Jun',
+      'Jul', 'Ago', 'Sep',
+      'Oct', 'Nov', 'Dic',
     ];
   }
 
   getWeeks() {
     return [
-      'Mon',
-      'Tue',
-      'Wed',
-      'Thu',
-      'Fri',
-      'Sat',
-      'Sun',
+      'Lun',
+      'Mar',
+      'Mie',
+      'Jue',
+      'Vie',
+      'Sab',
+      'Dom',
     ];
   }
 }

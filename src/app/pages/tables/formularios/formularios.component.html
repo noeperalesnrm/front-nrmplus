@@ -1,0 +1,80 @@
+<nb-card>
+  <nb-card-header>
+    <h4>Nuevo Formulario</h4>
+  </nb-card-header>
+  <nb-card-body>
+    <!-- Nombre del Formulario -->
+    <div class="form-group">
+      <label class="label">Nombre del Formulario *</label>
+      <input
+        nbInput
+        fullWidth
+        (change)="onValueSett($event)"
+        formControlName="name"
+        placeholder="Ej: Encuesta de Satisfacción"
+        [status]="formGroup.controls['name'].invalid && formGroup.controls['name'].touched ? 'danger' : 'basic'"
+      />
+      <small class="error-message" *ngIf="formGroup.controls['name'].invalid && formGroup.controls['name'].touched">
+        El nombre es requerido (mín. 3 caracteres)
+      </small>
+    </div>
+
+    <!-- Imagen del Formulario -->
+    <div class="form-group">
+      <label class="label">Imagen *</label>
+      <input
+        type="file"
+        accept=".jpg,.jpeg,.png,.tiff"
+        (change)="onFileSelected($event)"
+        #fileInput
+        style="display: none;"
+      />
+      <button
+        nbButton
+        size="small"
+        (click)="fileInput.click()"
+        [status]="!selectedFile ? 'danger' : 'success'"
+      >
+        <nb-icon icon="image-outline"></nb-icon>
+        {{ selectedFile ? 'Imagen Seleccionada' : 'Seleccionar Imagen' }}
+      </button>
+      <small class="hint">Formatos: JPG, PNG o TIFF (Máx. 2MB)</small>
+      
+      <!-- Preview de Imagen -->
+      <div *ngIf="previewImage" class="image-preview">
+        <img [src]="previewImage" alt="Vista previa de la imagen">
+      </div>
+    </div>
+
+    <!-- Tabla de Preguntas -->
+    <div class="questions-section">
+      <h5>Preguntas y Respuestas *</h5>
+      <small class="hint">Mínimo {{ minQuestions }} preguntas con al menos {{ minAnswers }} respuestas cada una</small>
+      <ng2-smart-table
+        [settings]="tableSettings"
+        [source]="questionsSource"
+      ></ng2-smart-table>
+    </div>
+
+    <!-- Botones de Acción -->
+    <div class="actions">
+      <button
+        nbButton
+        status="primary"
+        (click)="onSubmit()"
+      >
+        <nb-icon icon="save-outline"></nb-icon>
+        Guardar Formulario
+      </button>
+      <!--button
+        nbButton
+        status="basic"
+        (click)="resetForm()"
+        style="margin-left: 1rem;"
+      >
+        <nb-icon icon="trash-2-outline"></nb-icon>
+        Limpiar
+      </button-->
+    </div>
+  </nb-card-body>
+</nb-card>
